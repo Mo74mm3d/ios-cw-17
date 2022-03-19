@@ -12,7 +12,8 @@ import SwiftUI
 var people = [
     UserCovidInfo(fullName: "Mohammed Alqattan", area: "Salwa", numberOfDoses: 2),
     UserCovidInfo(fullName: "Abdullah", area: "Zahra", numberOfDoses: 2),
-    UserCovidInfo(fullName: "Khaled", area: "Adan", numberOfDoses: 3)
+    UserCovidInfo(fullName: "Khaled", area: "Adan", numberOfDoses: 3),
+    UserCovidInfo(fullName: "Ahmad", area: "Bayan", numberOfDoses: 0)
 ]
 
 
@@ -31,45 +32,17 @@ struct ContentView: View {
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .padding()
                 // name of new cases
-                VStack{
-        // الحالة الأولى
-                // الاسم
-                    Text("Name: \(people[0].fullName)")
-                        .fontWeight(.semibold)
-// المنطقة
-                    Text("Area: \(people[0].area)")
-                        .fontWeight(.semibold)
-                    // عدد الجرعات
-                    Text("Number of Doses: \(people[0].numberOfDoses)")
-                        .fontWeight(.semibold)
-
-                Divider()
-                }
-                VStack{
-        // الحالة الثانية
-                // الاسم
-               Text("Name: \(people[1].fullName)")
-                        .fontWeight(.semibold)
-                // المنطقة
-               Text("Area: \(people[1].area)")
-                        .fontWeight(.semibold)
-    // عدد الجرعات
-               Text("Number of Doses: \(people[1].numberOfDoses)")
-                        .fontWeight(.semibold)
-
-                Divider()
-                }
-                VStack{
-              // الحالة الثالثة
-                      // الاسم
-                     Text("Name: \(people[2].fullName)")
-                        .fontWeight(.semibold)
-                      // المنطقة
-                     Text("Area: \(people[2].area)")
-                        .fontWeight(.semibold)
-          // عدد الجرعات
-                     Text("Number of Doses: \(people[2].numberOfDoses)")
-                        .fontWeight(.semibold)
+                ForEach(people, id: \.id) { i in
+                    VStack{
+                        Text("Full name: \(i.fullName)")
+                            .fontWeight(.semibold)
+                        Text("Area: \(i.area)")
+                            .fontWeight(.semibold)
+                        Text("Number of Doses: \(i.numberOfDoses)")
+                            .fontWeight(.semibold)
+                        Divider()
+                        
+                    }
                 }
                 Spacer()
                 HStack{

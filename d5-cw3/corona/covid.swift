@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct UserCovidInfo {
+struct UserCovidInfo: Identifiable {
+    var id = UUID()
     var fullName: String
     var area: String
     var numberOfDoses: Int
