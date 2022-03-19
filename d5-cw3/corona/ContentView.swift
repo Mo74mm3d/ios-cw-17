@@ -13,7 +13,13 @@ var people = [
     UserCovidInfo(fullName: "Mohammed Alqattan", area: "Salwa", numberOfDoses: 2),
     UserCovidInfo(fullName: "Abdullah", area: "Zahra", numberOfDoses: 2),
     UserCovidInfo(fullName: "Khaled", area: "Adan", numberOfDoses: 3),
-    UserCovidInfo(fullName: "Ahmad", area: "Bayan", numberOfDoses: 0)
+    UserCovidInfo(fullName: "Ahmad", area: "Bayan", numberOfDoses: 0),
+    UserCovidInfo(fullName: "Jasem", area: "Shuwaikh", numberOfDoses: 1),
+    UserCovidInfo(fullName: "Talal", area: "Mishrif", numberOfDoses: 2),
+    UserCovidInfo(fullName: "Adnan", area: "Sabah Al Salem", numberOfDoses: 3),
+    UserCovidInfo(fullName: "Mahdi", area: "Abdullah Al Mubarak", numberOfDoses: 3),
+    UserCovidInfo(fullName: "Yousef", area: "Salwa", numberOfDoses: 2),
+    UserCovidInfo(fullName: "Abdulrazaq", area: "Hawally", numberOfDoses: 0)
 ]
 
 
@@ -32,8 +38,9 @@ struct ContentView: View {
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .padding()
                 // name of new cases
-                ForEach(people, id: \.id) { i in
+                List(people, id: \.id) { i in
                     VStack{
+                        
                         Text("Full name: \(i.fullName)")
                             .fontWeight(.semibold)
                         Text("Area: \(i.area)")
