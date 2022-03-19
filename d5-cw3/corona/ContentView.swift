@@ -9,6 +9,12 @@ import SwiftUI
 
 
 // يجب عمل هيكل وكائنات من الهيكل
+var people = [
+    UserCovidInfo(fullName: "Mohammed Alqattan", area: "Salwa", numberOfDoses: 2),
+    UserCovidInfo(fullName: "Abdullah", area: "Zahra", numberOfDoses: 2),
+    UserCovidInfo(fullName: "Khaled", area: "Adan", numberOfDoses: 3)
+]
+
 
 
 struct ContentView: View {
@@ -28,33 +34,42 @@ struct ContentView: View {
                 VStack{
         // الحالة الأولى
                 // الاسم
-               Text("")
+                    Text("Name: \(people[0].fullName)")
+                        .fontWeight(.semibold)
 // المنطقة
-                Text("")
+                    Text("Area: \(people[0].area)")
+                        .fontWeight(.semibold)
                     // عدد الجرعات
-               Text("")
+                    Text("Number of Doses: \(people[0].numberOfDoses)")
+                        .fontWeight(.semibold)
 
                 Divider()
                 }
                 VStack{
         // الحالة الثانية
                 // الاسم
-               Text("")
+               Text("Name: \(people[1].fullName)")
+                        .fontWeight(.semibold)
                 // المنطقة
-               Text("")
+               Text("Area: \(people[1].area)")
+                        .fontWeight(.semibold)
     // عدد الجرعات
-               Text("")
+               Text("Number of Doses: \(people[1].numberOfDoses)")
+                        .fontWeight(.semibold)
 
                 Divider()
                 }
                 VStack{
               // الحالة الثالثة
                       // الاسم
-                     Text("")
+                     Text("Name: \(people[2].fullName)")
+                        .fontWeight(.semibold)
                       // المنطقة
-                     Text("")
+                     Text("Area: \(people[2].area)")
+                        .fontWeight(.semibold)
           // عدد الجرعات
-                     Text("")
+                     Text("Number of Doses: \(people[2].numberOfDoses)")
+                        .fontWeight(.semibold)
                 }
                 Spacer()
                 HStack{
